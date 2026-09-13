@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction - NEXA ESTATE AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">NEXA / ESTATE AI</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html" class="active">Prediction</a></li>
+            <li><a href="info.html">Intelligence</a></li>
+            <li><a href="photos.html">Gallery</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="logout-btn">Logout</a>
+        </div>
+    </nav>
+
+    <div class="loader-overlay" id="loader">
+        <div class="spinner"></div>
+        <div id="loader-text" style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Analyzing property...</div>
+    </div>
+
+    <header class="dashboard-header">
+        <div class="container">
+            <h1 style="font-size: 3rem;">Predict House Price</h1>
+            <p style="font-size: 1.1rem; max-width: 600px;">Enter the property details below to get an estimated price.</p>
+        </div>
+    </header>
+
+    <main class="dashboard-layout container">
+        <div class="input-section">
+            <form id="prediction-engine">
+                <div class="input-grid">
+                    <!-- Simplified Inputs without the dataset codes -->
+                    <div class="input-card"><label>Crime Rate</label><p>Area crime rate</p><div class="input-control"><input type="number" step="any" id="f-crim" value="0.00632"><span class="unit">rate</span></div></div>
+                    <div class="input-card"><label>Zoned Land</label><p>Residential area</p><div class="input-control"><input type="number" step="any" id="f-zn" value="18"><span class="unit">%</span></div></div>
+                    <div class="input-card"><label>Business Area</label><p>Commercial area</p><div class="input-control"><input type="number" step="any" id="f-indus" value="2.31"><span class="unit">acres</span></div></div>
+                    <div class="input-card"><label>Near River</label><p>Is it near a river? (1=Yes, 0=No)</p><div class="input-control"><input type="number" step="any" id="f-chas" value="0"><span class="unit">bool</span></div></div>
+                    <div class="input-card"><label>Pollution (NOx)</label><p>Air quality index</p><div class="input-control"><input type="number" step="any" id="f-nox" value="0.538"><span class="unit">ppm</span></div></div>
+                    <div class="input-card"><label>Average Rooms</label><p>Number of rooms</p><div class="input-control"><input type="number" step="any" id="f-rm" value="6.575"><span class="unit">rooms</span></div></div>
+                    <div class="input-card"><label>Property Age</label><p>Old units percentage</p><div class="input-control"><input type="number" step="any" id="f-age" value="65.2"><span class="unit">%</span></div></div>
+                    <div class="input-card"><label>Workplace Distance</label><p>Distance to offices</p><div class="input-control"><input type="number" step="any" id="f-dis" value="4.09"><span class="unit">miles</span></div></div>
+                    <div class="input-card"><label>Highway Access</label><p>Road connectivity</p><div class="input-control"><input type="number" step="any" id="f-rad" value="1"><span class="unit">idx</span></div></div>
+                    <div class="input-card"><label>Property Tax</label><p>Tax rate</p><div class="input-control"><input type="number" step="any" id="f-tax" value="296"><span class="unit">rate</span></div></div>
+                    <div class="input-card"><label>Student-Teacher Ratio</label><p>School quality</p><div class="input-control"><input type="number" step="any" id="f-ptratio" value="15.3"><span class="unit">ratio</span></div></div>
+                    <div class="input-card"><label>Demographics</label><p>Area population index</p><div class="input-control"><input type="number" step="any" id="f-b" value="396.9"><span class="unit">idx</span></div></div>
+                    <div class="input-card"><label>Lower Income Pop</label><p>Neighborhood status</p><div class="input-control"><input type="number" step="any" id="f-lstat" value="4.98"><span class="unit">%</span></div></div>
+                </div>
+                <button type="button" id="run-valuation" class="btn btn-primary w-100 mt-4" style="padding: 1.5rem; font-size: 1.1rem;">PREDICT PRICE &rarr;</button>
+            </form>
+        </div>
+
+        <div class="results-section">
+            <div class="sticky-panel hidden" id="result-section">
+                <div class="result-card">
+                    <span class="panel-label">Estimated Property Price</span>
+                    <div class="result-value" id="res-value">₹0</div>
+                    
+                    <span class="panel-label">Estimated Range</span>
+                    <div class="range-vis"><span id="res-range-min">₹0</span><span id="res-range-max">₹0</span></div>
+                    <div class="range-bar"><div class="range-active"></div></div>
+                    
+                    <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+                        <button id="print-report" class="btn" style="flex:1;">Print Result</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/prediction.js"></script>
+</body>
+</html>

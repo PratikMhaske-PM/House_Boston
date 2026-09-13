@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - NEXA ESTATE AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">NEXA / ESTATE AI</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html" class="auth-required hidden">Prediction</a></li>
+            <li><a href="info.html">Intelligence</a></li>
+            <li><a href="photos.html" class="active">Gallery</a></li>
+        </ul>
+    </nav>
+    <header class="dashboard-header">
+        <div class="container text-center">
+            <span class="hero-label">Architecture</span>
+            <h1 style="font-size: 3.5rem;">Premium Properties</h1>
+        </div>
+    </header>
+    
+    <div class="masonry">
+        <div class="masonry-item"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Estate 1"></div>
+        <div class="masonry-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Estate 2"></div>
+        <div class="masonry-item"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Estate 3"></div>
+        <div class="masonry-item"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Estate 4"></div>
+        <div class="masonry-item"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Estate 5"></div>
+        <div class="masonry-item"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Estate 6"></div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lb-close" id="lb-close">&times;</span>
+        <button class="lb-nav lb-prev" id="lb-prev">&#10094;</button>
+        <img src="" alt="Fullscreen Image" id="lb-img">
+        <button class="lb-nav lb-next" id="lb-next">&#10095;</button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
